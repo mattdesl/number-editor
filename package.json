@@ -25,7 +25,7 @@
   },
   "scripts": {
     "test": "node test.js",
-    "demo": "beefy demo/index.js -- -t brfs"
+    "demo": "beefy demo/index.js --open -- -t brfs"
   },
   "testling": {
     "files": "test.js",
