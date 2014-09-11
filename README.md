@@ -2,6 +2,8 @@
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
+![img](http://i.imgur.com/JEQp2Br.gif)
+
 A simple number editor or spinner that acts like those in After Effects and similar software. You can click and drag to slide the value, or double-click to enter a new value. You can use up/down while editing to increment and decrement the value. Holding command/control will step by smaller values, and holding shift will step by larger values.
 
 ```js

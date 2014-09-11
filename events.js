@@ -78,7 +78,7 @@ module.exports.blur = function(opt, ev) {
 
 module.exports.dragEnd = function(opt, ev) {
     ev.preventDefault()
-    if (opt.cursor && opt.cursorParent && opt.cursorParent.style)
+    if (this.cursor && opt.cursorParent && opt.cursorParent.style)
         opt.cursorParent.style.cursor = 'auto'
 }
 
@@ -86,7 +86,7 @@ module.exports.dragMove = function(opt, ev, offset, delta) {
     if (this.dragEnabled) {
         ev.preventDefault()
 
-        if (opt.cursor && opt.cursorParent && opt.cursorParent.style)
+        if (this.cursor && opt.cursorParent && opt.cursorParent.style)
             opt.cursorParent.style.cursor = 'ew-resize'
 
         var step = 1

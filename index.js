@@ -41,10 +41,8 @@ function NumberEditor(opt) {
     this.element.style.cursor = 'ew-resize'
 
     opt.parent = opt.parent || document
-    opt.cursorParent = opt.parent
-    if (!opt.cursorParent || opt.cursorParent === document)
-        opt.cursorParent = document.body
-
+    opt.cursorParent = document.body
+    
     if (!opt.touch) {
         this.element.setAttribute("readonly", "readonly")
     
