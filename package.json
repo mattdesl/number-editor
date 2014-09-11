@@ -6,7 +6,9 @@
   "license": "MIT",
   "author": "Matt DesLauriers <dave.des@gmail.com>",
   "dependencies": {
+    "attach-dom-events": "^1.0.0",
     "clamp": "^1.0.1",
+    "clickdrag": "^1.0.0",
     "dom-value": "0.0.0",
     "events": "^1.0.2",
     "inherits": "^2.0.1",
