@@ -25,7 +25,7 @@ require('domready')(function() {
 [![NPM](https://nodei.co/npm/number-editor.png)](https://nodei.co/npm/number-editor/)
 
 
-#### ```createEditor([options])```
+#### `editor = createEditor([options])`
 
 Creates a new number editor with the given options.
 
@@ -42,8 +42,18 @@ Creates a new number editor with the given options.
 - `cursorParent` the parent container that changes cursors during out-of-element mouse events. Default is `document.body`. 
 - `touch` prepare the element for mobile/touch devices (acts like a simple number box)
 
+#### `editor.on('change', listener)`
 
+Handle an event when the number changes. The new value is passed as the parameter.
 
+#### `editor.on('edit-start')`
+#### `editor.on('edit-stop')`
+
+Events for start and stop of editing (manual typing). 
+
+#### `editor.editing`
+
+A read-only value that returns true if the box is being edited (i.e. user is typing manually).
 
 ## demo
 
