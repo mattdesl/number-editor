@@ -76,6 +76,7 @@ NumberEditor.prototype.startEdit = function() {
         this.element.style.cursor = 'auto'
     this.element.removeAttribute('readonly')
     this.dragEnabled = false
+    this.emit('edit-start')
 }
 
 NumberEditor.prototype.stopEdit = function() {
@@ -83,6 +84,7 @@ NumberEditor.prototype.stopEdit = function() {
     if (this.cursor)
         this.element.style.cursor = 'ew-resize'
     this.element.setAttribute('readonly', 'readonly')
+    this.emit('edit-stop')
 }
 
 //sets the value and emits a change event
@@ -94,6 +96,12 @@ NumberEditor.prototype._setValue = function(value) {
     if (old !== this._value)
         this.emit('change', this._value)
 }
+
+Object.defineProperty(NumberEditor.prototype, "editing", {
+    get: function() {
+        return !this.dragEnabled
+    },
+})
 
 //does not emit change events
 Object.defineProperty(NumberEditor.prototype, "value", {
