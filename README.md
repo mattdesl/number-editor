@@ -57,6 +57,10 @@ Events for start and stop of editing (manual typing).
 
 A read-only value that returns true if the box is being edited (i.e. user is typing manually).
 
+#### `editor.dispose()`
+
+Removes this element from its parent node and dispoess the drag events on the parent element.
+
 ## demo
 
 To run the demo, install beefy and browserify:
