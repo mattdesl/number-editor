@@ -20,6 +20,8 @@ require('domready')(function() {
 })
 ```
 
+For one that accepts units (like `%` or `px`) see [number-unit-editor](https://nodei.co/npm/number-editor/).
+
 ## Usage
 
 [![NPM](https://nodei.co/npm/number-editor.png)](https://nodei.co/npm/number-editor/)

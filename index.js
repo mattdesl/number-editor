@@ -69,6 +69,14 @@ function NumberEditor(opt) {
 
 inherits(NumberEditor, EventEmitter)
 
+NumberEditor.prototype.dispose = function() {
+    if (this.drag) 
+        this.drag.dispose()
+    if (this.element && this.element.parentNode)
+        this.element.parentNode.dispose(this.element)
+    this.element = null
+}
+
 //Opens the editor
 NumberEditor.prototype.startEdit = function() {
     this.dragging = null
@@ -97,7 +105,22 @@ NumberEditor.prototype._setValue = function(value) {
         this.emit('change', this._value)
 }
 
+NumberEditor.prototype._constrain = function(value) {
+    var newVal = clamp(Number(value), this.min, this.max)
+    if (isNaN(newVal))
+        newVal = this._value
+
+    if (this.decimals === 0)
+        newVal = Math.round(newVal)
+    return newVal
+}
+
+NumberEditor.prototype._display = function(value) {
+    return value.toFixed(this.decimals)
+}
+
 Object.defineProperty(NumberEditor.prototype, "editing", {
+    configurable: true,
     get: function() {
         return !this.dragEnabled
     },
@@ -105,20 +128,15 @@ Object.defineProperty(NumberEditor.prototype, "editing", {
 
 //does not emit change events
 Object.defineProperty(NumberEditor.prototype, "value", {
+    configurable: true,
     get: function() {
         return this._value
     },
     set: function(value) {
         var old = this._value
 
-        var newVal = clamp(Number(value), this.min, this.max)
-        if (isNaN(newVal))
-            newVal = this._value
-        this._value = newVal
-
-        if (this.decimals === 0)
-            this._value = Math.round(this._value)
-        domval(this.element, this._value.toFixed(this.decimals))
+        this._value = this._constrain(value)
+        domval(this.element, this._display(this._value))
     }
 })
 

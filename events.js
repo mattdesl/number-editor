@@ -66,7 +66,7 @@ module.exports.change = function(opt, ev) {
     if (this.cursor)
         this.element.style.cursor = 'ew-resize'
     this.element.setAttribute('readonly', 'readonly')
-    this._setValue( parseFloat(String(domval(this.element)), 10) )
+    this._setValue( this._parse() )
 }
 
 module.exports.blur = function(opt, ev) {
