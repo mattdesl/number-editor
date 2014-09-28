@@ -115,6 +115,11 @@ NumberEditor.prototype._constrain = function(value) {
     return newVal
 }
 
+NumberEditor.prototype._parse = function(str) {
+    str = typeof str === 'string' ? str : String(domval(this.element))
+    return parseFloat(str, 10)
+}
+
 NumberEditor.prototype._display = function(value) {
     return value.toFixed(this.decimals)
 }
