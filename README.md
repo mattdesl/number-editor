@@ -63,13 +63,19 @@ Removes this element from its parent node and dispoess the drag events on the pa
 
 ## demo
 
-To run the demo, install beefy and browserify:
+To run the demo from source, clone this repo and follow these steps:
 
-```npm i beefy browserify -g```
 
-Then:
+```sh
+git clone https://github.com/mattdesl/number-editor.git
+cd number-editor
+npm install
 
-```npm run demo```
+## now run the demo 
+npm run demo
+```
+
+Open `localhost:9966` to see the result.
 
 ## License
 

@@ -1,6 +1,6 @@
 var opts = {
-    // min: 0,
-    // max: 1,
+    min: 0,
+    max: 1,
     value: 1,
     step: 0.01,
     decimals: 2
